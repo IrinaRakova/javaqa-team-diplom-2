@@ -22,7 +22,7 @@ public class CreditAccount extends Account {
                     "Накопительная ставка не может быть отрицательной, а у вас: " + rate
             );
         }
-        this.balance = initialBalance;
+        this.balance = initialBalance;  //????
         this.creditLimit = creditLimit;
         this.rate = rate;
     }
@@ -43,7 +43,7 @@ public class CreditAccount extends Account {
         }
         balance = balance - amount;
         if (balance > -creditLimit) {
-            balance = -amount;
+            balance = -amount;  // зачем эта строка? если баланс больше лимита, то тру и все
             return true;
         } else {
             return false;
@@ -65,8 +65,8 @@ public class CreditAccount extends Account {
     public boolean add(int amount) {
         if (amount <= 0) {
             return false;
-        }
-        balance = amount;
+        }  //else
+        balance = amount; //balance = balance + amount
         return true;
     }
 

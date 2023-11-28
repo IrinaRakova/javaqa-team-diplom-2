@@ -17,4 +17,5 @@ public class CreditAccountTest {
 
         Assertions.assertEquals(3_000, account.getBalance());
     }
+
 }
