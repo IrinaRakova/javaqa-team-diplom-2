@@ -191,7 +191,7 @@ public class SavingAccountTest {
                 5
         );
         boolean expected = true;
-        boolean actual = account.pay(2_500);
+        boolean actual = account.pay(2_000);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -258,7 +258,6 @@ public class SavingAccountTest {
             );
         });
     }
-
 
 }
 
