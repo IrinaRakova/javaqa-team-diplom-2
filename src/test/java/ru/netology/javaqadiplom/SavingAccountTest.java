@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class SavingAccountTest {
-    // тесты класса SavingAccount
+    // тесты метода SavingAccount
     @Test
     public void shouldMinBalanceMoreMaxBalance() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
@@ -168,7 +168,7 @@ public class SavingAccountTest {
         Assertions.assertEquals(2_000, account.getBalance());
     }
 
-    //Тесты класса pay
+    //Тесты метода pay
     @Test
     public void shouldPayMoreThanMinBalance() { // баланс после покупки больше минимального баланса
         SavingAccount account = new SavingAccount(
@@ -191,7 +191,7 @@ public class SavingAccountTest {
                 5
         );
         boolean expected = true;
-        boolean actual = account.pay(2_500);
+        boolean actual = account.pay(2_000);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -221,7 +221,7 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(2_000, account.getBalance());
     }
-    // тесты класса rate
+    // тесты метода rate
 
     @Test
     public void shouldPositivePercent() {
@@ -235,6 +235,17 @@ public class SavingAccountTest {
         Assertions.assertEquals(2, account.yearChange());
     }
 
+    @Test
+    public void shouldPositivePercent1() {
+        SavingAccount account = new SavingAccount(
+                50,
+                100,
+                10_000,
+                5
+        );
+
+        Assertions.assertEquals(2, account.yearChange());
+    }
     @Test
     public void shouldZeroPercent() {  //должно показывать процент
         SavingAccount account = new SavingAccount(
@@ -254,7 +265,7 @@ public class SavingAccountTest {
                     2_000,
                     1_000,
                     10_000,
-                    -1
+                    -5
             );
         });
     }
