@@ -56,8 +56,7 @@ public class CreditAccount extends Account {
         if (amount <= 0) {
             return false;
         }
-        balance = balance - amount;
-        if (balance > -creditLimit) {
+        if ((balance = balance - amount) > -creditLimit) {
             return true;
         } else {
             return false;
@@ -80,9 +79,9 @@ public class CreditAccount extends Account {
     public boolean add(int amount) {
         if (amount <= 0) {
             return false;
-        }  else {
-        balance = balance + amount;
-        return true;
+        } else {
+            balance = balance + amount;
+            return true;
         }
     }
 
@@ -97,9 +96,11 @@ public class CreditAccount extends Account {
      */
     @Override
     public int yearChange() {
-        if (balance < 0 ) {
-            return balance * rate / 100 ;
-        } else {return 0;}
+        if (balance < 0) {
+            return balance * rate / 100;
+        } else {
+            return 0;
+        }
     }
 
 
