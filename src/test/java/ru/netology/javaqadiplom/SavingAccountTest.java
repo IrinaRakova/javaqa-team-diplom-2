@@ -259,6 +259,7 @@ public class SavingAccountTest {
             );
         });
     }
+
     @Test
     public void shouldPositivePercentBefore99() {
         SavingAccount account = new SavingAccount(
@@ -270,6 +271,7 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(4, account.yearChange());
     }
+
     @Test
     public void shouldPositivePercentFrom1() {
         SavingAccount account = new SavingAccount(
@@ -281,7 +283,6 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(1, account.yearChange());
     }
-
 }
 
 
